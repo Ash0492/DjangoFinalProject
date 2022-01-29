@@ -78,7 +78,7 @@
 
             <!-- A choice submission form example -->
             <form id="questionform" action="point to a submit view" method="post">
-                        {%for question in {{questions}}%}
+                        {%for question in Question.questions %}
                         <div class="card mt-1">
                             <div class="card-header"><h5>{{ question.question_text}}</h5></div>
                             {% csrf_token %}
@@ -98,6 +98,7 @@
 
             <!--Check here to see more details Bootstrap checkbox
              https://www.w3schools.com/bootstrap4/bootstrap_forms_inputs.asp-->
+            {%endfor%}
     </div>
 </body>
 </html>
