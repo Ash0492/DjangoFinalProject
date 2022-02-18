@@ -49,8 +49,10 @@
         <a class="btn btn-link text-danger" href="{% url 'onlinecourse:course_details' course.id %}">Re-test</a>
         {% endif %}
         <div class="card-columns-vertical mt-1">
-        <h5 class="">Exam results</h5>
+        <h5 class="btn btn-primary">Exam results</h5>
+            <p> {{show_Exam_result.grade}}
             <!--HINT Display exam results-->
+
         </div>
     </div>
 </body>

@@ -120,7 +120,7 @@ def submit(request, course_id):
         choice=request.post['choice']
         submission= Submission.objects.get(choice=choice)
 
-    return HttpResponseRedirect(reverse (viewname='show_exam_result', args=(submission.id)))
+    return HttpResponseRedirect(reverse (viewname='onlinecourse:show_exam_result', args=[Submission.id]))
 
 
 
@@ -150,7 +150,7 @@ def show_exam_result(request, course_id, submission_id):
     submission_id = get_object_or_404(pk=submission_id)
     selected_choice = Submission.objects.get(choices, pk=choice_id)
     if selected_choice.is_correct:
-        grade = selected_choice.all_answers+=1=
+        grade = selected_choice.all_answers+1
     return render(request, 'onlinecourse/exam_result_bootstrap.html', course_id, choice_id, grade )
 
 
